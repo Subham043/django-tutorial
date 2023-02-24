@@ -34,7 +34,7 @@ class Article(TimestampInfo): #extends timestamp info abstract class
     banner = models.ImageField(upload_to='post_banners/%Y/%m/%d/')# file will be saved to MEDIA_ROOT/uploads/2015/01/30
     publish_on = models.DateField(default=date.today, blank=True) #using the date module here for default
     is_draft = models.BooleanField(default=False)
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name="author") #using the user model here for author forign key
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name="articles") #using the user model here for author forign key
 
     def __str__(self):
         return self.title

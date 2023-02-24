@@ -33,6 +33,7 @@ info_dict = {
 urlpatterns = [
     path('polls/', include(polls_url)),
     path('blogs/', include(blogs_url)),
+    path('api-auth/', include('rest_framework.urls')),
     path('admin/', admin.site.urls),
     path('sitemap.xml', sitemap,
          {'sitemaps': {'blog': GenericSitemap(info_dict, priority=0.6)}},
